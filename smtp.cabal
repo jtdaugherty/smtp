@@ -1,0 +1,48 @@
+Name:           smtp
+Synopsis:       Client support for SMTP
+Description:	This package provides client support for the SMTP
+                protocol.  This code originated from Jun Mukai's
+                HaskellNet package.
+Version:        0.1
+Copyright:      (c) 2006 Jun Mukai
+Author:         Jun Mukai
+Maintainer:	Jonathan Daugherty <drcygnus@gmail.com>
+License:        BSD3
+License-file:	LICENSE
+Category:       Email
+Homepage:       https://github.com/jtdaugherty/HaskellNet
+Cabal-version:  >=1.6
+Build-type:	Simple
+
+Extra-Source-Files:
+  CHANGELOG
+  README.md
+
+Source-Repository head
+  type:     git
+  location: git://github.com/jtdaugherty/smtp.git
+
+Library
+  Hs-Source-Dirs: src
+  GHC-Options: -Wall -fno-warn-unused-do-bind
+
+  Exposed-modules:
+    Network.Mail.SMTP
+    Network.Mail.SMTP.Auth
+
+  Other-modules:
+    Data.ByteString.Stream
+
+  Build-Depends:
+    base >= 4 && < 5,
+    -- haskell98,
+    network,
+    -- mtl,
+    bytestring,
+    -- pretty,
+    array,
+    Crypto > 4.2.1,
+    base64-string,
+    -- old-time,
+    mime-mail >= 0.3.0 && < 0.4,
+    text
